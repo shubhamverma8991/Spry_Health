@@ -35,4 +35,8 @@ export class EmployeeFormComponent {
       // Form is invalid, display error messages or handle accordingly
     }
   }
+
+  resetForm() {
+    this.employeeForm.reset();
+  }
 }
