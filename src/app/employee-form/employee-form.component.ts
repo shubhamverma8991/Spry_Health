@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, SimpleChanges } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 @Component({
@@ -9,6 +9,17 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 export class EmployeeFormComponent {
   @Input() selectedClient: string | undefined;
   employeeForm: FormGroup;
+  employeeData: any; // Property to store form data
+  formFieldSequence = [
+    "firstName",
+    "lastName",
+    "email",
+    "phoneNumber",
+    "address",
+    "position",
+    "dateOfJoining",
+  ];
+
   constructor(private formBuilder: FormBuilder) {
     this.employeeForm = this.formBuilder.group({
       firstName: ["", Validators.required],
@@ -24,19 +35,30 @@ export class EmployeeFormComponent {
       dateOfJoining: ["", Validators.required],
     });
   }
+  ngOnChanges(changes: SimpleChanges) {
+    if (
+      changes["selectedClient"] &&
+      changes["selectedClient"].currentValue !==
+        changes["selectedClient"].previousValue
+    ) {
+      this.resetForm();
+    }
+  }
 
+  resetAll() {
+    this.employeeForm.reset();
+    this.employeeData = undefined;
+  }
   onSubmit() {
     if (this.employeeForm.valid) {
-      // Form is valid, proceed with form submission
       console.log(this.employeeForm.value);
-      // You can also reset the form after successful submission
+      this.employeeData = this.employeeForm.value;
       this.employeeForm.reset();
     } else {
-      // Form is invalid, display error messages or handle accordingly
     }
   }
 
   resetForm() {
-    this.employeeForm.reset();
+    this.resetAll();
   }
 }
