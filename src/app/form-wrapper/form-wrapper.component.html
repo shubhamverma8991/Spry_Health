@@ -1,0 +1,16 @@
+<div class="wrapper">
+  <div class="header" [ngClass]="selectedClient?.toLowerCase()">
+    <h1>{{ selectedClient }}</h1>
+  </div>
+  <div
+    class="inside_wrapper"
+    [ngClass]="(selectedClient + 'back')?.toLowerCase()"
+  >
+    <app-client-selection
+      (clientSelectionChanged)="clientSelectionChanged($event)"
+    ></app-client-selection>
+    <app-employee-form
+      [selectedClient]="selectedClient || ''"
+    ></app-employee-form>
+  </div>
+</div>

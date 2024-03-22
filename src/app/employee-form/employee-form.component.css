@@ -1,0 +1,66 @@
+.form_wrapper {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+.my-form {
+  width: 80%;
+  /* border: 1px solid black; */
+}
+.form-group {
+  margin-bottom: 10px;
+  width: 100%;
+}
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.form-group > div {
+  width: 100%;
+}
+input,
+textarea,
+select {
+  display: block;
+  width: 70%;
+  line-height: 25px;
+  margin: 5px 0;
+  padding: 0 10px;
+  /* margin: 0; */
+}
+select {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+textarea {
+  resize: none;
+  width: 70%;
+}
+
+.invalid-feedback {
+  font-size: 10px;
+  color: red;
+  margin: 5px;
+}
+.btn {
+  color: black;
+  padding: 10px 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: blue;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+}
+
+@media only screen and (max-width: 440px) {
+  input,
+  textarea,
+  select {
+    width: 100%;
+  }
+}

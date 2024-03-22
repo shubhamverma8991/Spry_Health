@@ -9,6 +9,8 @@
 # local environment variables
 /.env
 
+/.angular
+
 # IDE/editor specific files
 /.idea
 /.vscode
