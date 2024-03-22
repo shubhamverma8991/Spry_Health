@@ -26,8 +26,12 @@ select {
   line-height: 25px;
   margin: 5px 0;
   padding: 0 10px;
-  height: 25px;
+
   /* margin: 0; */
+}
+input,
+select {
+  height: 25px;
 }
 select {
   padding-top: 5px;
