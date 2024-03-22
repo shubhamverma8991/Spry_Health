@@ -1,0 +1,22 @@
+# compiled output
+/dist
+/tmp
+/out-tsc
+
+# dependencies
+/node_modules
+
+# local environment variables
+/.env
+
+# IDE/editor specific files
+/.idea
+/.vscode
+*.sublime-workspace
+*.suo
+*.ntvs*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
