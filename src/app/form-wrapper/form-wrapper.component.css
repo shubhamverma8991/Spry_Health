@@ -28,3 +28,9 @@
   -ms-border-radius: 30px;
   -o-border-radius: 30px;
 }
+
+@media only screen and (max-width: 430px) {
+  .wrapper {
+    width: 100%;
+    margin: 0;
+}
